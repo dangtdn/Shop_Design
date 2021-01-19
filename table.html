@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="row">
+    <div class="col-lg-4 col-sm-12 animate__animated animate__fadeInLeft wow d-flex flex-wrap" 
+    ng-repeat="product in products | orderBy:sortColumn:reverse ">
+      <div class="product-item">
+        <div class="img">
+          <img src="{{product.src}}" alt="" />
+        </div>
+        <div class="product-info">
+          <p>{{product.name}}</p>
+          <span class="text-warning">{{product.storage}}</span>
+          <p>{{product.sale | currency:"":0}}VNĐ <span style="color: #0F888C;"> {{product.discount}}%</span></p>
+          
+          <div>
+            <span>{{product.price | currency:"":0}}VNĐ</span>
+            <span >{{product.date | date:"dd/MM/yyyy"}}</span>
+          </div>
+        </div>
+      </div>
+  </div>
+</body>
+</html>

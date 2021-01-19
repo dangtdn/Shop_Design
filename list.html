@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="product-list animate__animated animate__fadeInRight wow " ng-repeat="product in products | orderBy:sortColumn:reverse">
+    <div class="product-list-left">
+      <img src="{{product.src}}" alt="">
+    </div>
+    <div class="product-list-center">
+      <p>{{product.name}}</p>
+      <p class="text-warning">{{product.storage}}</p>
+      <p>{{product.describe}}</p>
+      <span>{{product.date | date:"dd/MM/yyyy"}}</span>
+    </div>
+    <div class="product-list-right">
+      <p>{{product.sale | currency:"":0}}VNĐ <span style="color: #0F888C;">{{product.discount}}%</span></p>
+      <p>{{product.price | currency:"":0}}VNĐ</p>
+    </div>
+  </div>
+</body>
+</html>
